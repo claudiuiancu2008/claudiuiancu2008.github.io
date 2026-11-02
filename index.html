@@ -1,11 +1,164 @@
 <!DOCTYPE html>
-<html>
- <head>
-   <meta charsed="UTF-8">
-   <TITLE>ANUNTURILE MELE</TITLE>
- </head> 
-  <body>
-    <h1> Bine ai venit pe site-ul meu de anunturi!</h1>
-  <p>In curand vei gasi aici primele anunturi</p>
-  </body>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anunțurile mele – vinde și cumpără simplu</title>
+<style>
+  :root {
+    --albastru: #1f4e8c;
+    --albastru-inchis: #163a68;
+    --portocaliu: #f28c28;
+    --fundal: #f3f6fa;
+    --text: #1d2733;
+    --gri: #5f6b7a;
+    --linie: #dbe2ea;
+    --alb: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundal);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+  /* Bara de sus */
+  header { background: var(--albastru); color: var(--alb); }
+  .bara { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 12px; }
+  .logo { font-size: 1.5rem; font-weight: bold; }
+  .logo span { color: var(--portocaliu); }
+  .btn-adauga {
+    background: var(--portocaliu); color: var(--alb);
+    padding: 10px 18px; border-radius: 6px; font-weight: bold;
+  }
+  .btn-adauga:hover { background: #d97a1c; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 3px solid var(--portocaliu); outline-offset: 2px;
+  }
+
+  /* Căutare */
+  .cautare { background: var(--albastru-inchis); padding: 22px 0; }
+  .cautare form { display: flex; gap: 8px; flex-wrap: wrap; }
+  .cautare input, .cautare select {
+    padding: 12px; border: 0; border-radius: 6px; font-size: 1rem;
+  }
+  .cautare input { flex: 2 1 220px; }
+  .cautare select { flex: 1 1 150px; }
+  .cautare button {
+    padding: 12px 26px; border: 0; border-radius: 6px;
+    background: var(--portocaliu); color: var(--alb);
+    font-size: 1rem; font-weight: bold; cursor: pointer;
+  }
+
+  h2 { margin: 28px 0 14px; font-size: 1.3rem; }
+
+  /* Categorii */
+  .categorii { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .categorie {
+    background: var(--alb); border: 1px solid var(--linie); border-radius: 8px;
+    padding: 16px 10px; text-align: center; font-weight: bold;
+  }
+  .categorie:hover { border-color: var(--portocaliu); }
+  .categorie .emoji { display: block; font-size: 1.8rem; margin-bottom: 4px; }
+
+  /* Anunțuri */
+  .anunturi { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+  .anunt { background: var(--alb); border: 1px solid var(--linie); border-radius: 8px; overflow: hidden; }
+  .poza {
+    height: 140px; display: flex; align-items: center; justify-content: center;
+    font-size: 3rem; background: #e6ecf4;
+  }
+  .anunt .info { padding: 12px; }
+  .anunt h3 { margin: 0 0 6px; font-size: 1rem; }
+  .pret { color: var(--albastru); font-weight: bold; font-size: 1.1rem; }
+  .locatie { color: var(--gri); font-size: 0.9rem; }
+
+  footer { margin-top: 40px; padding: 24px 0; background: var(--albastru-inchis); color: #c9d6e6; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container bara">
+    <a href="index.html" class="logo">Anunțurile<span>Mele</span></a>
+    <a href="#" class="btn-adauga">+ Adaugă anunț gratuit</a>
+  </div>
+</header>
+
+<section class="cautare">
+  <div class="container">
+    <form onsubmit="return false;">
+      <input type="search" placeholder="Ce cauți? (ex: bicicletă, apartament)" aria-label="Ce cauți">
+      <select aria-label="Județ">
+        <option>Toată țara</option>
+        <option>București</option>
+        <option>Cluj</option>
+        <option>Iași</option>
+        <option>Timiș</option>
+        <option>Brașov</option>
+      </select>
+      <button type="submit">Caută</button>
+    </form>
+  </div>
+</section>
+
+<main class="container">
+  <h2>Categorii</h2>
+  <div class="categorii">
+    <a class="categorie" href="#"><span class="emoji">🚗</span>Auto</a>
+    <a class="categorie" href="#"><span class="emoji">🏠</span>Imobiliare</a>
+    <a class="categorie" href="#"><span class="emoji">📱</span>Electronice</a>
+    <a class="categorie" href="#"><span class="emoji">🛋️</span>Casă și grădină</a>
+    <a class="categorie" href="#"><span class="emoji">👕</span>Modă</a>
+    <a class="categorie" href="#"><span class="emoji">💼</span>Locuri de muncă</a>
+    <a class="categorie" href="#"><span class="emoji">🐶</span>Animale</a>
+    <a class="categorie" href="#"><span class="emoji">🛠️</span>Servicii</a>
+  </div>
+
+  <h2>Anunțuri noi</h2>
+  <div class="anunturi">
+    <a class="anunt" href="#">
+      <div class="poza">🚲</div>
+      <div class="info">
+        <h3>Bicicletă de oraș, stare bună</h3>
+        <div class="pret">450 lei</div>
+        <div class="locatie">București</div>
+      </div>
+    </a>
+    <a class="anunt" href="#">
+      <div class="poza">📱</div>
+      <div class="info">
+        <h3>Telefon second-hand, cu husă</h3>
+        <div class="pret">900 lei</div>
+        <div class="locatie">Cluj</div>
+      </div>
+    </a>
+    <a class="anunt" href="#">
+      <div class="poza">🛋️</div>
+      <div class="info">
+        <h3>Canapea extensibilă, 3 locuri</h3>
+        <div class="pret">700 lei</div>
+        <div class="locatie">Iași</div>
+      </div>
+    </a>
+    <a class="anunt" href="#">
+      <div class="poza">🚗</div>
+      <div class="info">
+        <h3>Autoturism, an 2012, diesel</h3>
+        <div class="pret">3.800 €</div>
+        <div class="locatie">Timiș</div>
+      </div>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="container">© 2026 AnunțurileMele. Site în lucru.</div>
+</footer>
+
+</body>
 </html>
