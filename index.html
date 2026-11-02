@@ -3,162 +3,245 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anunțurile mele – vinde și cumpără simplu</title>
+<title>AnunțurileMele – vinde și cumpără simplu</title>
+<meta name="description" content="Anunțuri gratuite: auto, imobiliare, electronice, servicii și multe altele.">
 <style>
-  :root {
-    --albastru: #1f4e8c;
-    --albastru-inchis: #163a68;
-    --portocaliu: #f28c28;
-    --fundal: #f3f6fa;
-    --text: #1d2733;
-    --gri: #5f6b7a;
-    --linie: #dbe2ea;
-    --alb: #ffffff;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--fundal);
-    color: var(--text);
-    line-height: 1.5;
-  }
-  a { color: inherit; text-decoration: none; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
-
-  /* Bara de sus */
-  header { background: var(--albastru); color: var(--alb); }
-  .bara { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 12px; }
-  .logo { font-size: 1.5rem; font-weight: bold; }
-  .logo span { color: var(--portocaliu); }
-  .btn-adauga {
-    background: var(--portocaliu); color: var(--alb);
-    padding: 10px 18px; border-radius: 6px; font-weight: bold;
-  }
-  .btn-adauga:hover { background: #d97a1c; }
-  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
-    outline: 3px solid var(--portocaliu); outline-offset: 2px;
-  }
-
-  /* Căutare */
-  .cautare { background: var(--albastru-inchis); padding: 22px 0; }
-  .cautare form { display: flex; gap: 8px; flex-wrap: wrap; }
-  .cautare input, .cautare select {
-    padding: 12px; border: 0; border-radius: 6px; font-size: 1rem;
-  }
-  .cautare input { flex: 2 1 220px; }
-  .cautare select { flex: 1 1 150px; }
-  .cautare button {
-    padding: 12px 26px; border: 0; border-radius: 6px;
-    background: var(--portocaliu); color: var(--alb);
-    font-size: 1rem; font-weight: bold; cursor: pointer;
-  }
-
-  h2 { margin: 28px 0 14px; font-size: 1.3rem; }
-
-  /* Categorii */
-  .categorii { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
-  .categorie {
-    background: var(--alb); border: 1px solid var(--linie); border-radius: 8px;
-    padding: 16px 10px; text-align: center; font-weight: bold;
-  }
-  .categorie:hover { border-color: var(--portocaliu); }
-  .categorie .emoji { display: block; font-size: 1.8rem; margin-bottom: 4px; }
-
-  /* Anunțuri */
-  .anunturi { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
-  .anunt { background: var(--alb); border: 1px solid var(--linie); border-radius: 8px; overflow: hidden; }
-  .poza {
-    height: 140px; display: flex; align-items: center; justify-content: center;
-    font-size: 3rem; background: #e6ecf4;
-  }
-  .anunt .info { padding: 12px; }
-  .anunt h3 { margin: 0 0 6px; font-size: 1rem; }
-  .pret { color: var(--albastru); font-weight: bold; font-size: 1.1rem; }
-  .locatie { color: var(--gri); font-size: 0.9rem; }
-
-  footer { margin-top: 40px; padding: 24px 0; background: var(--albastru-inchis); color: #c9d6e6; font-size: 0.9rem; }
+:root{--a:#1f4e8c;--ai:#163a68;--o:#f28c28;--bg:#f3f6fa;--t:#1d2733;--g:#5f6b7a;--l:#dbe2ea;--w:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--t);line-height:1.5}
+a{color:inherit;text-decoration:none}
+.c{max-width:1100px;margin:0 auto;padding:0 16px}
+header{background:var(--a);color:var(--w)}
+.bara{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:10px;flex-wrap:wrap}
+.logo{font-size:1.5rem;font-weight:bold}.logo span{color:var(--o)}
+nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn,button.btn{background:var(--o);color:var(--w);padding:10px 16px;border:0;border-radius:6px;font-weight:bold;font-size:1rem;cursor:pointer;display:inline-block}
+.btn:hover{background:#d97a1c}.btn.s{background:var(--a)}.btn.r{background:#b3261e}
+:focus-visible{outline:3px solid var(--o);outline-offset:2px}
+.hero{background:var(--ai);padding:20px 0}
+form.f{display:flex;gap:8px;flex-wrap:wrap}
+input,select,textarea{padding:11px;border:1px solid var(--l);border-radius:6px;font-size:1rem;font-family:inherit;background:var(--w)}
+.f input,.f select{flex:1 1 140px}.f input[name=q]{flex:3 1 220px}
+h1{font-size:1.5rem}h2{margin:26px 0 12px;font-size:1.25rem}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.cat{background:var(--w);border:1px solid var(--l);border-radius:8px;padding:14px 8px;text-align:center;font-weight:bold}
+.cat:hover{border-color:var(--o)}.cat i{display:block;font-size:1.7rem;font-style:normal}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.anunt{background:var(--w);border:1px solid var(--l);border-radius:8px;overflow:hidden;display:block}
+.anunt:hover{border-color:var(--o)}
+.poza{height:140px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:#e6ecf4}
+.poza img{width:100%;height:100%;object-fit:cover}
+.info{padding:12px}.info h3{margin:0 0 6px;font-size:1rem}
+.pret{color:var(--a);font-weight:bold;font-size:1.1rem}.loc{color:var(--g);font-size:.9rem}
+.box{background:var(--w);border:1px solid var(--l);border-radius:8px;padding:16px;margin-bottom:14px}
+.det{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+@media(max-width:760px){.det{grid-template-columns:1fr}}
+.mare{height:300px;background:#e6ecf4;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:6rem;overflow:hidden}
+.mare img{width:100%;height:100%;object-fit:contain}
+.mici{display:flex;gap:6px;margin-top:6px}.mici img{width:70px;height:55px;object-fit:cover;border-radius:4px;cursor:pointer;border:2px solid var(--l)}
+.rand{display:grid;gap:10px;max-width:560px}.rand label{font-weight:bold;font-size:.95rem;display:grid;gap:4px}
+.err{background:#fde8e6;color:#8a1c14;padding:10px;border-radius:6px;margin-bottom:10px}.err:empty{display:none}
+.pag{display:flex;gap:6px;margin:18px 0;flex-wrap:wrap}.pag a{padding:8px 12px;background:var(--w);border:1px solid var(--l);border-radius:6px}.pag a.on{background:var(--a);color:var(--w)}
+.tag{display:inline-block;padding:2px 8px;border-radius:10px;background:#e6ecf4;font-size:.8rem;margin-right:4px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+#toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--ai);color:var(--w);padding:10px 18px;border-radius:6px;display:none;z-index:9}
+footer{margin-top:40px;padding:22px 0;background:var(--ai);color:#c9d6e6;font-size:.9rem}
 </style>
 </head>
 <body>
+<header><div class="c bara">
+  <a href="#/" class="logo">Anunțurile<span>Mele</span></a>
+  <nav id="nav"></nav>
+</div></header>
+<main class="c" id="app"></main>
+<footer><div class="c">© 2026 AnunțurileMele. Prototip demo: datele rămân doar în browserul tău.</div></footer>
+<div id="toast" role="status"></div>
 
-<header>
-  <div class="container bara">
-    <a href="index.html" class="logo">Anunțurile<span>Mele</span></a>
-    <a href="#" class="btn-adauga">+ Adaugă anunț gratuit</a>
-  </div>
-</header>
+<script>
+"use strict";
+const CATS={"Auto":["Autoturisme","Motociclete","Scutere","Camioane","Piese auto","Accesorii auto"],
+"Imobiliare":["Apartamente","Case","Terenuri","Spații comerciale","Închirieri"],
+"Electronice":["Telefoane","Laptopuri","Calculatoare","Componente PC","Televizoare","Foto-video","Audio"],
+"Casă și grădină":[],"Locuri de muncă":[],"Servicii":[],"Modă":[],"Sport":[],"Animale":[],"Copii":[],"Hobby":[],"Agricultură":[],"Diverse":[]};
+const ICON={"Auto":"🚗","Imobiliare":"🏠","Electronice":"📱","Casă și grădină":"🛋️","Locuri de muncă":"💼","Servicii":"🛠️","Modă":"👕","Sport":"⚽","Animale":"🐶","Copii":"🧸","Hobby":"🎨","Agricultură":"🌾","Diverse":"📦"};
+const JUD=["București","Cluj","Iași","Timiș","Brașov","Constanța","Dolj","Sibiu"];
+const STARI=["Nou","Folosit"];
+const $=(s,e=document)=>e.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const load=(k,d)=>{try{const v=JSON.parse(localStorage.getItem(k));return v??d}catch{return d}};
+const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{toast("Memoria browserului e plină.")}};
+function toast(m){const t=$("#toast");t.textContent=m;t.style.display="block";clearTimeout(toast.i);toast.i=setTimeout(()=>t.style.display="none",2800)}
 
-<section class="cautare">
-  <div class="container">
-    <form onsubmit="return false;">
-      <input type="search" placeholder="Ce cauți? (ex: bicicletă, apartament)" aria-label="Ce cauți">
-      <select aria-label="Județ">
-        <option>Toată țara</option>
-        <option>București</option>
-        <option>Cluj</option>
-        <option>Iași</option>
-        <option>Timiș</option>
-        <option>Brașov</option>
-      </select>
-      <button type="submit">Caută</button>
-    </form>
-  </div>
-</section>
+const mk=(id,title,price,cur,cat,sub,county,city,state,date,desc)=>({id,title,desc,price,cur,cat,sub,county,city,state,date,owner:"demo@exemplu.ro",ownerName:"Vânzător demo",tel:"0700000000",status:"ACTIVE",imgs:[]});
+const SEED=[
+mk(1,"Bicicletă de oraș, stare bună",450,"lei","Sport","","București","Sector 3","Folosit","2026-10-30","Bicicletă de oraș cu 6 viteze, cadru de aluminiu, folosită un sezon. Se poate vedea în București."),
+mk(2,"Telefon second-hand, cu husă",900,"lei","Electronice","Telefoane","Cluj","Cluj-Napoca","Folosit","2026-10-29","Telefon funcțional, bateria ține o zi întreagă. Vine cu încărcător și husă."),
+mk(3,"Canapea extensibilă, 3 locuri",700,"lei","Casă și grădină","","Iași","Iași","Folosit","2026-10-28","Canapea extensibilă cu ladă de depozitare, material ușor de curățat."),
+mk(4,"Autoturism, an 2012, diesel",3800,"€","Auto","Autoturisme","Timiș","Timișoara","Folosit","2026-10-27","Mașină întreținută, service la zi, două chei. Preț ușor negociabil."),
+mk(5,"Apartament 2 camere, zonă liniștită",65000,"€","Imobiliare","Apartamente","București","Sector 6","Folosit","2026-10-26","Apartament la etaj intermediar, aproape de metrou și de magazine."),
+mk(6,"Laptop pentru birou, 8 GB RAM",1800,"lei","Electronice","Laptopuri","Brașov","Brașov","Folosit","2026-10-25","Laptop rapid pentru birou și școală, ecran de 15 inchi, baterie bună."),
+mk(7,"Cărucior copii, 3 în 1",350,"lei","Copii","","Sibiu","Sibiu","Folosit","2026-10-24","Cărucior cu landou și scaun auto incluse, stare foarte bună."),
+mk(8,"Scuter 50cc, puțin folosit",2100,"lei","Auto","Scutere","Dolj","Craiova","Folosit","2026-10-23","Scuter economic pentru oraș, itp valabil, un singur proprietar."),
+mk(9,"Meditații la matematică",80,"lei","Servicii","","Cluj","Cluj-Napoca","Nou","2026-10-22","Meditații pentru gimnaziu și liceu, online sau față în față. Preț pe oră."),
+mk(10,"Mașină de spălat, 7 kg",600,"lei","Casă și grădină","","Constanța","Constanța","Folosit","2026-10-21","Mașină de spălat funcțională, clasa A++, se poate testa la fața locului.")];
 
-<main class="container">
-  <h2>Categorii</h2>
-  <div class="categorii">
-    <a class="categorie" href="#"><span class="emoji">🚗</span>Auto</a>
-    <a class="categorie" href="#"><span class="emoji">🏠</span>Imobiliare</a>
-    <a class="categorie" href="#"><span class="emoji">📱</span>Electronice</a>
-    <a class="categorie" href="#"><span class="emoji">🛋️</span>Casă și grădină</a>
-    <a class="categorie" href="#"><span class="emoji">👕</span>Modă</a>
-    <a class="categorie" href="#"><span class="emoji">💼</span>Locuri de muncă</a>
-    <a class="categorie" href="#"><span class="emoji">🐶</span>Animale</a>
-    <a class="categorie" href="#"><span class="emoji">🛠️</span>Servicii</a>
-  </div>
+let listings=load("am_listings",null);if(!listings){listings=SEED;save("am_listings",listings)}
+let user=load("am_user",null),favs=load("am_favs",[]),msgs=load("am_msgs",[]),reports=load("am_reports",[]);
+const active=()=>listings.filter(l=>l.status==="ACTIVE");
+const byId=id=>listings.find(l=>String(l.id)===String(id));
+const fmt=l=>Number(l.price).toLocaleString("ro-RO")+" "+l.cur;
+const dt=s=>new Date(s).toLocaleDateString("ro-RO");
+const opts=(arr,sel,all)=>(all?`<option value="">${all}</option>`:"")+arr.map(x=>`<option${x===sel?" selected":""}>${esc(x)}</option>`).join("");
+const thumb=l=>l.imgs&&l.imgs[0]&&l.imgs[0].startsWith("data:image/")?`<img src="${l.imgs[0]}" alt="" loading="lazy">`:`<span>${ICON[l.cat]||"📦"}</span>`;
+const card=l=>`<a class="anunt" href="#/anunt/${l.id}"><div class="poza">${thumb(l)}</div><div class="info"><h3>${esc(l.title)}</h3><div class="pret">${esc(fmt(l))}</div><div class="loc">${esc(l.city)}, ${esc(l.county)}</div></div></a>`;
+const grid=a=>a.length?`<div class="grid">${a.map(card).join("")}</div>`:`<p>Niciun anunț găsit. Încearcă alte filtre sau <a href="#/adauga"><b>adaugă tu primul anunț</b></a>.</p>`;
 
-  <h2>Anunțuri noi</h2>
-  <div class="anunturi">
-    <a class="anunt" href="#">
-      <div class="poza">🚲</div>
-      <div class="info">
-        <h3>Bicicletă de oraș, stare bună</h3>
-        <div class="pret">450 lei</div>
-        <div class="locatie">București</div>
-      </div>
-    </a>
-    <a class="anunt" href="#">
-      <div class="poza">📱</div>
-      <div class="info">
-        <h3>Telefon second-hand, cu husă</h3>
-        <div class="pret">900 lei</div>
-        <div class="locatie">Cluj</div>
-      </div>
-    </a>
-    <a class="anunt" href="#">
-      <div class="poza">🛋️</div>
-      <div class="info">
-        <h3>Canapea extensibilă, 3 locuri</h3>
-        <div class="pret">700 lei</div>
-        <div class="locatie">Iași</div>
-      </div>
-    </a>
-    <a class="anunt" href="#">
-      <div class="poza">🚗</div>
-      <div class="info">
-        <h3>Autoturism, an 2012, diesel</h3>
-        <div class="pret">3.800 €</div>
-        <div class="locatie">Timiș</div>
-      </div>
-    </a>
-  </div>
-</main>
+function nav(){
+  $("#nav").innerHTML=`<a href="#/favorite">♥ Favorite (${favs.length})</a><a href="#/mesaje">Mesaje</a><a href="#/anunturile-mele">Anunțurile mele</a><a href="#/cont">${user?esc(user.name):"Autentificare"}</a><a class="btn" href="#/adauga">+ Adaugă anunț</a>`;
+}
+function searchForm(q){
+  const g=k=>q.get(k)||"",cat=g("cat");
+  return `<form id="fcauta" class="f"><input name="q" value="${esc(g("q"))}" placeholder="Ce cauți? (ex: bicicletă)" aria-label="Ce cauți">
+  <select name="cat" aria-label="Categorie">${opts(Object.keys(CATS),cat,"Toate categoriile")}</select>
+  <select name="sub" aria-label="Subcategorie">${opts(CATS[cat]||[],g("sub"),"Toate subcategoriile")}</select>
+  <select name="jud" aria-label="Județ">${opts(JUD,g("jud"),"Toată țara")}</select>
+  <input name="min" type="number" min="0" value="${esc(g("min"))}" placeholder="Preț min" aria-label="Preț minim">
+  <input name="max" type="number" min="0" value="${esc(g("max"))}" placeholder="Preț max" aria-label="Preț maxim">
+  <select name="stare" aria-label="Stare">${opts(STARI,g("stare"),"Orice stare")}</select>
+  <select name="sort" aria-label="Sortare"><option value="noi">Cele mai noi</option><option value="pret1"${g("sort")=="pret1"?" selected":""}>Preț crescător</option><option value="pret2"${g("sort")=="pret2"?" selected":""}>Preț descrescător</option><option value="rel"${g("sort")=="rel"?" selected":""}>Relevante</option></select>
+  <button class="btn">Caută</button></form>`;
+}
+function home(){
+  return `<div class="hero" style="margin:0 -16px;padding:20px 16px">${searchForm(new URLSearchParams())}</div>
+  <h2>Categorii</h2><div class="cats">${Object.keys(CATS).map(c=>`<a class="cat" href="#/cauta?cat=${encodeURIComponent(c)}"><i>${ICON[c]}</i>${esc(c)}</a>`).join("")}</div>
+  <h2>Anunțuri noi</h2>${grid(active().sort((a,b)=>b.date.localeCompare(a.date)||b.id-a.id).slice(0,8))}`;
+}
+function search(q){
+  const g=k=>q.get(k)||"",cat=g("cat"),sub=g("sub"),qq=g("q").trim().toLowerCase(),cty=g("jud"),mn=parseFloat(g("min")),mx=parseFloat(g("max")),st=g("stare"),so=g("sort")||"noi";
+  let r=active().filter(l=>(!cat||l.cat===cat)&&(!sub||l.sub===sub)&&(!cty||l.county===cty)&&(!st||l.state===st)&&(isNaN(mn)||l.price>=mn)&&(isNaN(mx)||l.price<=mx)&&(!qq||(l.title+" "+l.desc).toLowerCase().includes(qq)));
+  const sc=l=>qq&&l.title.toLowerCase().includes(qq)?1:0;
+  r.sort(so=="pret1"?(a,b)=>a.price-b.price:so=="pret2"?(a,b)=>b.price-a.price:so=="rel"?(a,b)=>sc(b)-sc(a)||b.date.localeCompare(a.date):(a,b)=>b.date.localeCompare(a.date)||b.id-a.id);
+  const N=8,pages=Math.max(1,Math.ceil(r.length/N)),pg=Math.min(pages,Math.max(1,parseInt(g("pag"))||1));
+  const links=Array.from({length:pages},(_,i)=>{const p=new URLSearchParams(q);p.set("pag",i+1);return `<a class="${i+1===pg?"on":""}" href="#/cauta?${p}">${i+1}</a>`}).join("");
+  return `<h1>Rezultate (${r.length})</h1>${searchForm(q)}<div style="height:14px"></div>${grid(r.slice((pg-1)*N,pg*N))}${pages>1?`<div class="pag">${links}</div>`:""}`;
+}
+function detail(l){
+  const fav=favs.includes(l.id),imgs=(l.imgs||[]).filter(s=>s.startsWith("data:image/"));
+  const gal=`<div class="mare" id="mare">${imgs[0]?`<img src="${imgs[0]}" alt="">`:ICON[l.cat]||"📦"}</div>${imgs.length>1?`<div class="mici">${imgs.map(s=>`<img src="${s}" alt="" data-act="thumb">`).join("")}</div>`:""}`;
+  const msg=user?`<form id="fmsg" class="rand" data-id="${l.id}"><label>Trimite un mesaj<textarea name="t" rows="3" maxlength="1000" required></textarea></label><button class="btn s">Trimite mesajul</button></form>`:`<p><a href="#/cont"><b>Autentifică-te</b></a> ca să trimiți mesaje.</p>`;
+  return `<p><a href="#/">← Acasă</a></p><div class="det"><div>${gal}<div class="box" style="margin-top:14px"><h1>${esc(l.title)}</h1><div class="pret" style="font-size:1.5rem">${esc(fmt(l))}</div>
+  <p><span class="tag">${esc(l.cat)}</span>${l.sub?`<span class="tag">${esc(l.sub)}</span>`:""}<span class="tag">${esc(l.state)}</span></p>
+  <p style="white-space:pre-wrap">${esc(l.desc)}</p><p class="loc">📍 ${esc(l.city)}, ${esc(l.county)} · Publicat la ${dt(l.date)}</p></div></div>
+  <div><div class="box"><b>${esc(l.ownerName)}</b><div class="loc">Vânzător</div>
+  <div class="row"><button class="btn" data-act="phone" data-id="${l.id}">Arată telefonul</button><button class="btn s" data-act="fav" data-id="${l.id}">${fav?"♥ Elimină din favorite":"♡ Salvează"}</button></div>
+  <div class="row"><button class="btn s" data-act="share">Distribuie</button><button class="btn r" data-act="report" data-id="${l.id}">Raportează</button></div></div>
+  <div class="box">${msg}</div></div></div>`;
+}
+function add(){
+  if(!user)return `<h1>Adaugă anunț</h1><p>Ai nevoie de cont. <a href="#/cont"><b>Autentifică-te aici</b></a>.</p>`;
+  return `<h1>Adaugă anunț</h1><div id="err" class="err"></div><form id="fadd" class="rand box">
+  <label>Titlu<input name="title" maxlength="80" required></label>
+  <label>Categorie<select name="cat" required>${opts(Object.keys(CATS),"","Alege…")}</select></label>
+  <label>Subcategorie<select name="sub"><option value="">–</option></select></label>
+  <label>Descriere<textarea name="desc" rows="5" maxlength="3000" required></textarea></label>
+  <label>Preț<input name="price" type="number" min="0" step="any" required></label>
+  <label>Monedă<select name="cur"><option>lei</option><option>€</option></select></label>
+  <label>Județ<select name="county" required>${opts(JUD,"","Alege…")}</select></label>
+  <label>Localitate<input name="city" maxlength="60" required></label>
+  <label>Telefon<input name="tel" placeholder="07xxxxxxxx" required></label>
+  <label>Stare<select name="state">${opts(STARI,"")}</select></label>
+  <label>Fotografii (maxim 4, jpg/png/webp, până la 5 MB)<input name="pics" type="file" accept="image/jpeg,image/png,image/webp" multiple></label>
+  <button class="btn">Publică anunțul</button></form>`;
+}
+function favPage(){return `<h1>Favorite</h1>${grid(active().filter(l=>favs.includes(l.id)))}`}
+function mine(){
+  if(!user)return `<h1>Anunțurile mele</h1><p><a href="#/cont"><b>Autentifică-te</b></a> ca să-ți vezi anunțurile.</p>`;
+  const m=listings.filter(l=>l.owner===user.email&&l.status!=="DELETED");
+  return `<h1>Anunțurile mele</h1>${m.length?m.map(l=>`<div class="box"><a href="#/anunt/${l.id}"><b>${esc(l.title)}</b></a> – ${esc(fmt(l))} <span class="tag">${l.status==="ACTIVE"?"Activ":"Vândut"}</span>
+  <div class="row">${l.status==="ACTIVE"?`<button class="btn s" data-act="sold" data-id="${l.id}">Marchează vândut</button>`:""}<button class="btn r" data-act="del" data-id="${l.id}">Șterge</button></div></div>`).join(""):"<p>Nu ai anunțuri încă.</p>"}`;
+}
+function msgPage(){
+  if(!user)return `<h1>Mesaje</h1><p><a href="#/cont"><b>Autentifică-te</b></a>.</p>`;
+  const m=msgs.filter(x=>x.from===user.email).reverse();
+  return `<h1>Mesaje trimise</h1>${m.length?m.map(x=>{const l=byId(x.lid);return `<div class="box"><b>${l?esc(l.title):"Anunț șters"}</b><div class="loc">${new Date(x.date).toLocaleString("ro-RO")}</div><p style="white-space:pre-wrap">${esc(x.t)}</p></div>`}).join(""):"<p>Nu ai trimis niciun mesaj.</p>"}<p class="loc">În acest prototip nu există alt utilizator care să răspundă.</p>`;
+}
+function acct(){
+  if(user)return `<h1>Contul meu</h1><div class="box"><p><b>${esc(user.name)}</b><br>${esc(user.email)}<br>Membru din ${dt(user.since)}</p><button class="btn r" data-act="logout">Ieși din cont</button></div>`;
+  return `<h1>Autentificare / cont nou</h1><div id="err" class="err"></div><form id="fcont" class="rand box"><label>Nume<input name="name" maxlength="40" required></label><label>Email<input name="email" type="email" required></label><button class="btn">Continuă</button><p class="loc">Demo: nu există parolă și nu se trimite niciun email. Datele rămân doar în acest browser.</p></form>`;
+}
+const nf=()=>`<h1>Pagina nu a fost găsită (404)</h1><p><a href="#/">Înapoi la prima pagină</a></p>`;
 
-<footer>
-  <div class="container">© 2026 AnunțurileMele. Site în lucru.</div>
-</footer>
+function render(){
+  const [p,qs]=location.hash.slice(1).split("?"),q=new URLSearchParams(qs||""),s=(p||"/").split("/").filter(Boolean);
+  let h,t="AnunțurileMele – vinde și cumpără simplu";
+  if(!s.length)h=home();
+  else if(s[0]==="cauta"){h=search(q);t="Căutare – AnunțurileMele"}
+  else if(s[0]==="anunt"){const l=byId(s[1]);if(l&&l.status!=="DELETED"){h=detail(l);t=l.title+" – AnunțurileMele"}else h=nf()}
+  else if(s[0]==="adauga")h=add();
+  else if(s[0]==="favorite")h=favPage();
+  else if(s[0]==="anunturile-mele")h=mine();
+  else if(s[0]==="mesaje")h=msgPage();
+  else if(s[0]==="cont")h=acct();
+  else h=nf();
+  $("#app").innerHTML=h;document.title=t;nav();scrollTo(0,0);
+}
+addEventListener("hashchange",render);
 
+const fitImg=f=>new Promise((ok,no)=>{
+  if(!/^image\/(jpeg|png|webp)$/.test(f.type)||f.size>5e6)return no();
+  const r=new FileReader();r.onerror=no;
+  r.onload=()=>{const i=new Image();i.onerror=no;i.onload=()=>{const k=Math.min(1,640/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=Math.max(1,i.width*k);c.height=Math.max(1,i.height*k);c.getContext("2d").drawImage(i,0,0,c.width,c.height);ok(c.toDataURL("image/jpeg",.7))};i.src=r.result};
+  r.readAsDataURL(f);
+});
+function showErr(a){const e=$("#err");if(e){e.innerHTML=a.map(esc).join("<br>");e.scrollIntoView()}}
+
+document.addEventListener("change",e=>{
+  if(e.target.matches("#fcauta [name=cat]")){const f=e.target.form;f.sub.value="";f.requestSubmit()}
+  if(e.target.matches("#fadd [name=cat]")){$("#fadd [name=sub]").innerHTML=opts(CATS[e.target.value]||[],"","–")}
+});
+document.addEventListener("submit",async e=>{
+  const f=e.target;e.preventDefault();
+  if(f.id==="fcauta"){const p=new URLSearchParams(new FormData(f));[...p.keys()].forEach(k=>!p.get(k)&&p.delete(k));const h="#/cauta?"+p;if(location.hash===h)render();else location.hash=h}
+  else if(f.id==="fcont"){
+    const d=Object.fromEntries(new FormData(f)),n=d.name.trim(),m=d.email.trim().toLowerCase();
+    if(n.length<2)return showErr(["Scrie un nume de cel puțin 2 litere."]);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m))return showErr(["Adresa de email nu este validă."]);
+    user={name:n,email:m,since:new Date().toISOString().slice(0,10)};save("am_user",user);toast("Ești autentificat.");location.hash="#/";
+  }
+  else if(f.id==="fadd"){
+    const d=Object.fromEntries(new FormData(f)),er=[],title=d.title.trim(),desc=d.desc.trim(),price=parseFloat(d.price),tel=d.tel.replace(/[\s.\-]/g,"");
+    if(title.length<5||title.length>80)er.push("Titlul trebuie să aibă între 5 și 80 de caractere.");
+    if(desc.length<20||desc.length>3000)er.push("Descrierea trebuie să aibă între 20 și 3000 de caractere.");
+    if(!(price>=0))er.push("Prețul nu este valid.");
+    if(!CATS[d.cat])er.push("Alege o categorie.");
+    if(d.sub&&!(CATS[d.cat]||[]).includes(d.sub))er.push("Subcategoria nu se potrivește.");
+    if(!JUD.includes(d.county))er.push("Alege județul.");
+    if(d.city.trim().length<2)er.push("Scrie localitatea.");
+    if(!/^(\+40|0)[237]\d{8}$/.test(tel))er.push("Telefonul nu este valid (ex: 0712345678).");
+    const imgs=[];
+    for(const file of [...f.pics.files].slice(0,4)){try{imgs.push(await fitImg(file))}catch{er.push("Fișierul „"+file.name+"” nu este o imagine validă sau e prea mare.")}}
+    if(er.length)return showErr(er);
+    const l={id:Date.now(),title,desc,price,cur:d.cur==="€"?"€":"lei",cat:d.cat,sub:d.sub,county:d.county,city:d.city.trim(),state:STARI.includes(d.state)?d.state:"Folosit",date:new Date().toISOString().slice(0,10),owner:user.email,ownerName:user.name,tel,status:"ACTIVE",imgs};
+    listings.push(l);save("am_listings",listings);toast("Anunț publicat.");location.hash="#/anunt/"+l.id;
+  }
+  else if(f.id==="fmsg"){
+    const t=f.t.value.trim();if(!t)return;
+    if(Date.now()-(load("am_last",0))<10000)return toast("Așteaptă câteva secunde între mesaje.");
+    msgs.push({lid:Number(f.dataset.id),from:user.email,t,date:Date.now()});save("am_msgs",msgs);save("am_last",Date.now());f.reset();toast("Mesaj trimis (demo).");
+  }
+});
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-act]");if(!b)return;const a=b.dataset.act,id=Number(b.dataset.id),l=byId(id);
+  if(a==="thumb"){$("#mare").innerHTML=`<img src="${b.src}" alt="">`}
+  else if(a==="phone"&&l){b.textContent=l.tel}
+  else if(a==="fav"){favs=favs.includes(id)?favs.filter(x=>x!==id):[...favs,id];save("am_favs",favs);render()}
+  else if(a==="share"){const u=location.href;navigator.clipboard?.writeText(u).then(()=>toast("Linkul a fost copiat."),()=>toast(u))}
+  else if(a==="report"){reports.push({lid:id,by:user?user.email:"anonim",date:Date.now()});save("am_reports",reports);toast("Mulțumim, anunțul a fost raportat.")}
+  else if(a==="sold"&&l&&l.owner===user?.email){l.status="SOLD";save("am_listings",listings);render()}
+  else if(a==="del"&&l&&l.owner===user?.email&&confirm("Ștergi anunțul?")){l.status="DELETED";save("am_listings",listings);render()}
+  else if(a==="logout"){user=null;localStorage.removeItem("am_user");location.hash="#/";render()}
+});
+render();
+</script>
 </body>
 </html>
